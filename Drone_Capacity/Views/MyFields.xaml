@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Drone_Capacity.Views.MyFields"
+             Title="My Fields">
+    <VerticalStackLayout Margin="20">
+        <HorizontalStackLayout Spacing="75">
+            <Image 
+                Source="back_button.png"
+                HeightRequest="20"
+                WidthRequest="20"
+                Aspect="AspectFit"/>
+            <Label 
+                Text="Select your crop"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                TextColor="Black"
+                FontSize="20"
+                FontAttributes="Bold"/>
+        </HorizontalStackLayout>
+        <!--Spacing-->
+        <BoxView HeightRequest="1" Color="Transparent" Opacity="0"  Margin="0,10,0,40"/>
+
+        <Grid
+            RowDefinitions="Auto, Auto, Auto"
+            ColumnDefinitions="*, *"
+            RowSpacing="20"
+            ColumnSpacing="20"
+            Margin="0,0,0,500">
+            <!-- When I create the database I have to pop the crops from the database -->
+            <Frame
+                Grid.Row="0" 
+                Grid.Column="0"
+                
+                BackgroundColor="White"
+                HasShadow="False"
+                CornerRadius="60"
+                HeightRequest="120"
+                WidthRequest="120"
+                Padding="15"
+                HorizontalOptions="Center"
+                BorderColor="#4BA26A">
+
+                <Image 
+                    Source="wheat_plant.png"
+                    Aspect="AspectFit"/>
+            </Frame>
+
+            <Frame
+                Grid.Row="0" 
+                Grid.Column="1"
+                
+                BackgroundColor="White"
+                HasShadow="False"
+                CornerRadius="60"
+                HeightRequest="120"
+                WidthRequest="120"
+                Padding="15"
+                HorizontalOptions="Center"
+                BorderColor="#4BA26A">
+
+                <Image 
+                    Source="tomato.png"
+                    Aspect="AspectFit"/>
+            </Frame>
+        </Grid>
+
+        <Frame
+            BackgroundColor="#4BA26A"
+            HasShadow="False"
+            CornerRadius="60"
+            HeightRequest="50"
+            WidthRequest="50"
+            Padding="15"
+            HorizontalOptions="Center">
+
+            <Image 
+                Source="tomato.png"
+                Aspect="AspectFit"/>
+        </Frame>
+
+    </VerticalStackLayout>
+</ContentPage>

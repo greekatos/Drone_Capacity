@@ -82,7 +82,7 @@
                 FontSize="18"
                 LeftImageHeight="30"
                 RightImageHeight="24"
-                Command="{Binding MyFieldsCommand}"
+                Command="{Binding HomeToMyFieldsCommand}"
                 />
             <!-- Add Crop Button -->
             <controls:CustomBorderButton

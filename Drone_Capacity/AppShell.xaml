@@ -36,11 +36,11 @@
         Route="Home"/>
 
         <!-- My Fields -->
-        <!--<ShellContent
+        <ShellContent
         Title="Fields"
         Icon="home_option_bottom_selection_fields.png"
-        Route="Fields"
-        ContentTemplate="{DataTemplate views:MyFieldsPage}" />-->
+        Route="MyFields"
+        ContentTemplate="{DataTemplate views:MyFields}" />
 
         <!--HelpDesk -->
         <!-- <ShellContent
