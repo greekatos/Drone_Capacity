@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Drone_Capacity.Views.LoginPage"
+             Title="LoginPage">
+    <VerticalStackLayout
+        Spacing="25"
+        Margin="35, 10, 35, 10">
+        <!--Image at the top-->
+        <Image 
+            Source="login_page_em.png"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Aspect="AspectFit"
+            HeightRequest="200"
+            Margin="10"/>
+        
+        <Label 
+            Text="Log In"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start"
+            FontSize="25"
+            FontAttributes="Bold"
+            />
+
+        <Label Text="please sign in to continue"
+               HorizontalOptions="Start"
+               TextColor="#bababa"
+               Padding="20, 0"
+            />
+
+        <HorizontalStackLayout
+            Spacing="20">
+            <Image
+                Source="email_icon.png"
+                HeightRequest="20"/>
+            <Entry
+                Placeholder="Email"/>
+        </HorizontalStackLayout>
+        
+        <BoxView Color="Grey"
+                 WidthRequest="350"
+                 HeightRequest="1"
+                 Margin="0,-20,0,0"/>
+
+        <Grid>
+            <Image
+                Source="lock.png"
+                HeightRequest="20"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"/>
+            <Entry
+                Placeholder="Password"
+                Margin="40,0,0,0"
+                VerticalOptions="Center"
+                IsPassword="True"/>
+            <Image
+                Source="show_password.png"
+                HeightRequest="20"
+                HorizontalOptions="End"
+                VerticalOptions="Center"/>
+        </Grid>
+
+        <BoxView Color="Grey"
+                 WidthRequest="350"
+                 HeightRequest="1"
+                 Margin="0,-20,0,0"/>
+        
+        <Label Text="Forgot Password?"
+               TextColor="#61ae7d"
+               FontAttributes="Bold"
+               HorizontalOptions="End"
+               Margin="0, 10, 0, 0"/>
+
+        <Button Text="Log In"
+                BackgroundColor="#61ae7d"
+                Margin="0, 20, 0, 0"
+                Command="{Binding LoginToHomeCommand}"/>
+
+        <Grid VerticalOptions="Center" Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <!-- First BoxView takes all available space -->
+                <ColumnDefinition Width="*" />
+                <!-- Auto for label, sizing to its content -->
+                <ColumnDefinition Width="Auto" />
+                <!-- Second BoxView takes remaining space -->
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Left BoxView -->
+            <BoxView Grid.Column="0" 
+                     Color="Grey" 
+                     HeightRequest="1" 
+                     VerticalOptions="Center" />
+
+            <!-- Center Label -->
+            <Label Grid.Column="1" 
+                   Text="or sign in with" 
+                   TextColor="Black" 
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center" 
+                   Margin="10,0" />
+
+            <!-- Right BoxView -->
+            <BoxView Grid.Column="2" 
+                     Color="Grey" 
+                     HeightRequest="1" 
+                     VerticalOptions="Center" />
+        </Grid>
+
+        <Grid HorizontalOptions="FillAndExpand" Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <!-- Left spacer: 25% of available width -->
+                <ColumnDefinition Width="1*" />
+                <!-- Center: 50% of available width for the icons -->
+                <ColumnDefinition Width="2*" />
+                <!-- Right spacer: 25% of available width -->
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- The left spacer (empty ContentView) -->
+            <ContentView Grid.Column="0" />
+
+            <!-- Place your social media icons in the center column -->
+            <HorizontalStackLayout Grid.Column="1" HorizontalOptions="Center" Spacing="50">
+                <Image Source="facebook_icon.png" HeightRequest="45" />
+                <Image Source="google_icon.png" HeightRequest="45" />
+            </HorizontalStackLayout>
+
+            <!-- The right spacer (empty ContentView) -->
+            <ContentView Grid.Column="2" />
+        </Grid>
+
+        <Grid HorizontalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            
+            <!--Left spacer-->
+            <ContentView Grid.Column="0" />
+
+            <HorizontalStackLayout Grid.Column="1" HorizontalOptions="Center" Spacing="20">
+                <Label Text="Don't have an account?"/>
+                <Label Text="Sign up" TextColor="#61ae7d" FontAttributes="Bold" />
+                <!--Click event on label-->
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SignUpCommand}" />
+                </Label.GestureRecognizers>
+            </HorizontalStackLayout>
+            
+            <!--Right spacer-->
+            <!--Left spacer-->
+            <ContentView Grid.Column="2" />
+        </Grid>
+        
+    </VerticalStackLayout>
+</ContentPage>

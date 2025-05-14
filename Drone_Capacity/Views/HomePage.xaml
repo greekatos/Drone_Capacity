@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:shapes="clr-namespace:Microsoft.Maui.Controls.Shapes;assembly=Microsoft.Maui.Controls"
+             xmlns:controls="clr-namespace:Drone_Capacity.Controls"
+             x:Class="Drone_Capacity.Views.HomePage"
+             Title="HomePage">
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Margin="20, 0, 20, 0">
+            <HorizontalStackLayout Spacing="295" Margin="0, 15, 0, 0">
+                <Image Source="crobit_logo_green.png" HeightRequest="40"/>
+                <Image Source="user_icon.png" HeightRequest="30"/>
+            </HorizontalStackLayout>
+
+            <!-- Grid that layers the background shape and the overlay content -->
+            <Grid>
+                <!-- Background Shape: a rectangle with a gradient and rounded corners -->
+                <shapes:Path Fill="#61ae7d" StrokeThickness="0"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="Fill"
+                             HeightRequest="250"
+                             Data="M0,0 L400,50 L400,150 L0,150 Z" />
+
+                <!-- Overlay Content: organized in a Grid with two rows and two columns -->
+                <Grid RowSpacing="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- First row -->
+                    <!-- Row 0, Column 0: a label -->
+                    <Label Grid.Row="0" Grid.Column="0" 
+                           Text="29°" 
+                           TextColor="White" 
+                           FontSize="60" 
+                           VerticalOptions="Center" 
+                           HorizontalOptions="Start" 
+                           Margin="10,0"/>
+                    
+                    <!-- Row 0, Column 1: an image -->
+                    <Image Grid.Row="0" Grid.Column="1" 
+                           Source="sun_cloud_angled_rain.png" 
+                           HeightRequest="70" 
+                           HorizontalOptions="End" 
+                           VerticalOptions="Center" 
+                           Margin="0,0,10,0"/>
+
+                    <!-- Second row -->
+                    <!-- Row 1, Column 0: a VerticalStackLayout with two nested labels -->
+                    <VerticalStackLayout Grid.Row="1" Grid.Column="0" 
+                                         HorizontalOptions="Start" 
+                                         Spacing="5" 
+                                         Margin="10,0">
+                        <Label Text="H:32° L:27°" TextColor="White" FontSize="16"/>
+                        <Label Text="Greece, Patras" TextColor="White" FontSize="16"/>
+                    </VerticalStackLayout>
+                    
+                    <!-- Row 1, Column 1: a label -->
+                    <Label Grid.Row="1" Grid.Column="1" 
+                           Text="Cloudy" 
+                           TextColor="White" 
+                           FontSize="18" 
+                           HorizontalOptions="End" 
+                           VerticalOptions="Center"
+                           Margin="0,0,10,0"/>
+                    
+                </Grid>
+            </Grid>
+            
+            <!-- My Fields Button-->
+            <controls:CustomBorderButton
+                ButtonText="My Fields"
+                LeftImageSource="field_icon.png"
+                RightImageSource="add_crop_home_page_btn_icon_2.png"
+                BackgroundColor="#bee2cb"
+                TextColor="White"
+                FontSize="18"
+                LeftImageHeight="30"
+                RightImageHeight="24"
+                Command="{Binding MyFieldsCommand}"
+                />
+            <!-- Add Crop Button -->
+            <controls:CustomBorderButton
+                ButtonText="Add Crop"
+                LeftImageSource="add_crop_home_page_btn_icon.png"
+                RightImageSource="add_crop_home_page_btn_icon_2.png"
+                BackgroundColor="#bee2cb"
+                TextColor="White"
+                FontSize="18"
+                LeftImageHeight="30"
+                RightImageHeight="24"
+                Command="{Binding AddCropCommand}"/>
+            
+            <!--Main Features Label-->
+            <Label Text="Main Features" 
+                   FontSize="25" 
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   Margin="0, -10"/>
+
+            <Grid RowDefinitions="Auto, Auto, Auto"
+                  ColumnDefinitions="Auto, Auto, Auto"
+                  RowSpacing="20"
+                  ColumnSpacing="20">
+
+                <!-- Diagnose Disease in Row 0, Col 0 -->
+                <controls:CustomCompositeControl
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    
+                    RectangleBackgroundColor="#bee3cb"
+                    RectangleHeight="180"
+                    RectangleWidth="170"
+
+                    TopImageSource="diagnose_disease_logo.png"
+                    TopImageHeight="65"
+
+                    TopLabelText="Diagnose your crop"
+                    TopLabelTextColor="#4BA26A"
+                    TopLabelFontSize="11"
+
+                    BottomButtonText="Diagnose Diseases"
+                    BottomRightImageSource="home_page_bottom_page_button.png"
+                    BottomButtonBackgroundColor="#61ae7d"
+                    BottomButtonTextColor="White"
+                    BottomButtonFontSize="10"
+                    BottomButtonHeight="35"
+                    BottomButtonWidth="140"
+                    
+                    BottomButtonCommand="{Binding FeatureOneCommand}" />
+
+                <!-- Soil Status in Row 0, Col 1 -->
+                <controls:CustomCompositeControl
+                    Grid.Row="0"
+                    Grid.Column="1"
+
+                    RectangleBackgroundColor="#bee3cb"
+                    RectangleHeight="180"
+                    RectangleWidth="170"
+
+                    TopImageSource="soil_status_logo.png"
+                    TopImageHeight="65"
+
+                    TopLabelText="Follow your soil status"
+                    TopLabelTextColor="#4BA26A"
+                    TopLabelFontSize="11"
+
+                    BottomButtonText="Soil Status"
+                    BottomRightImageSource="home_page_bottom_page_button.png"
+                    BottomButtonBackgroundColor="#61ae7d"
+                    BottomButtonTextColor="White"
+                    BottomButtonFontSize="10"
+                    BottomButtonHeight="35"
+                    BottomButtonWidth="140"
+                    
+                    BottomButtonCommand="{Binding FeatureTwoCommand}" />
+
+                <!-- Irrigation Control in Row 1, Col 0 -->
+                <controls:CustomCompositeControl
+                    Grid.Row="1"
+                    Grid.Column="0"
+
+                    RectangleBackgroundColor="#bee3cb"
+                    RectangleHeight="180"
+                    RectangleWidth="170"
+
+                    TopImageSource="irrigation_control_logo.png"
+                    TopImageHeight="65"
+
+                    TopLabelText="Control and save water"
+                    TopLabelTextColor="#4BA26A"
+                    TopLabelFontSize="11"
+
+                    BottomButtonText="Irrigation Control"
+                    BottomRightImageSource="home_page_bottom_page_button.png"
+                    BottomButtonBackgroundColor="#61ae7d"
+                    BottomButtonTextColor="White"
+                    BottomButtonFontSize="10"
+                    BottomButtonHeight="35"
+                    BottomButtonWidth="140"
+                    
+                    BottomButtonCommand="{Binding FeatureThreeCommand}" />
+
+                <!-- Satellite Monitoring in Row 1, Col 1 -->
+                <controls:CustomCompositeControl
+                    Grid.Row="1"
+                    Grid.Column="1"
+
+                    RectangleBackgroundColor="#bee3cb"
+                    RectangleHeight="180"
+                    RectangleWidth="170"
+
+                    TopImageSource="satellite_monitoring_logo.png"
+                    TopImageHeight="65"
+
+                    TopLabelText="Monitoring your crop"
+                    TopLabelTextColor="#4BA26A"
+                    TopLabelFontSize="11"
+                    
+                    BottomButtonText="Satellite Monitoring"
+                    BottomRightImageSource="home_page_bottom_page_button.png"
+                    BottomButtonBackgroundColor="#61ae7d"
+                    BottomButtonTextColor="White"
+                    BottomButtonFontSize="10"        
+                    BottomButtonHeight="35"
+                    BottomButtonWidth="140"
+                    
+                    BottomButtonCommand="{Binding FeatureFourCommand}" />
+
+                <!-- Consultant in Row 2, Col 0 -->
+                <controls:CustomCompositeControl
+                    Grid.Row="2"
+                    Grid.Column="0"
+
+                    RectangleBackgroundColor="#bee3cb"
+                    RectangleHeight="180"
+                    RectangleWidth="170"
+
+                    TopImageSource="consultant_logo.png"
+                    TopImageHeight="65"
+
+                    TopLabelText="Ask for anyting you want"
+                    TopLabelTextColor="#4BA26A"
+                    TopLabelFontSize="11"
+
+                    BottomButtonText="Consultant"
+                    BottomRightImageSource="home_page_bottom_page_button.png"
+                    BottomButtonBackgroundColor="#61ae7d"
+                    BottomButtonTextColor="White"
+                    BottomButtonFontSize="10"
+                    BottomButtonHeight="35"
+                    BottomButtonWidth="140"
+                    
+                    BottomButtonCommand="{Binding FeatureFifthCommand}" />
+
+                <!-- Scan Crop in Row 2, Col 1 -->
+                <controls:CustomCompositeControl
+                    Grid.Row="2"
+                    Grid.Column="1"
+
+                    RectangleBackgroundColor="#bee3cb"
+                    RectangleHeight="180"
+                    RectangleWidth="170"
+
+                    TopImageSource="scan_crop_logo.png"
+                    TopImageHeight="65"
+
+                    TopLabelText="Scan your crop"
+                    TopLabelTextColor="#4BA26A"
+                    TopLabelFontSize="11"
+                    
+                    BottomButtonText="Scan Crop"
+                    BottomRightImageSource="home_page_bottom_page_button.png"
+                    BottomButtonBackgroundColor="#61ae7d"
+                    BottomButtonTextColor="White"
+                    BottomButtonFontSize="10"
+                    BottomButtonHeight="35"
+                    BottomButtonWidth="140"
+                    
+                    BottomButtonCommand="{Binding FeatureSixthCommand}" />
+            </Grid>
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

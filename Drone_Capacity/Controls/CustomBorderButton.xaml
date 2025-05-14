@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView x:Name="Root"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:shapes="clr-namespace:Microsoft.Maui.Controls.Shapes;assembly=Microsoft.Maui.Controls"
+             x:Class="Drone_Capacity.Controls.CustomBorderButton">
+    <Border
+        x:Name="ButtonBorder"
+        BackgroundColor="{Binding BackgroundColor, Source={x:Reference Name=Root}}"
+        Padding="10"
+        HorizontalOptions="Fill"
+        Stroke="Transparent"
+        StrokeShape="{Binding StrokeShape, Source={x:Reference Name=Root}}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <!--Left image column-->
+                <ColumnDefinition Width="Auto"/>
+                <!--Text label column-->
+                <ColumnDefinition Width="Auto"/>
+                <!--Spacer column expands to fill remaining space-->
+                <ColumnDefinition Width="*"/>
+                <!--Right image column-->
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Left Image -->
+            <Image Grid.Column="0"
+                   Source="{Binding LeftImageSource, Source={x:Reference Name=Root}}"
+                   HeightRequest="{Binding LeftImageHeight, Source={x:Reference Name=Root}}"
+                   VerticalOptions="Center"/>
+        
+            <!-- Text Label -->
+            <Label Grid.Column="1"
+                   Text="{Binding ButtonText, Source={x:Reference Name=Root}}"
+                   TextColor="{Binding TextColor, Source={x:Reference Name=Root}}"
+                   FontSize="{Binding FontSize, Source={x:Reference Name=Root}}"
+                   VerticalOptions="Center"
+                   Margin="10,0"
+                   FontAttributes="Bold"/>
+        
+            <!-- Spacer -->
+            <BoxView Grid.Column="2" BackgroundColor="Transparent"/>
+        
+            <!-- Right Image -->
+            <Image Grid.Column="3"
+                   Source="{Binding RightImageSource, Source={x:Reference Name=Root}}"
+                   HeightRequest="{Binding RightImageHeight, Source={x:Reference Name=Root}}"
+                   VerticalOptions="Center"/>
+        </Grid>
+    </Border>
+    
+    <!-- Tap gesture for handling click events -->
+    <ContentView.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding Command, Source={x:Reference Name=Root}}"/>
+    </ContentView.GestureRecognizers>
+
+</ContentView>

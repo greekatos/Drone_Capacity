@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView x:Name="Root"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:shapes="clr-namespace:Microsoft.Maui.Controls.Shapes;assembly=Microsoft.Maui.Controls"
+             xmlns:controls="clr-namespace:Drone_Capacity.Controls"
+             x:Class="Drone_Capacity.Controls.CustomCompositeControl">
+    
+    <Grid>
+        <!-- Background Rectangle with configurable size and rounded corners -->
+        <shapes:Rectangle x:Name="BgRectangle"
+                          Fill="{Binding RectangleBackgroundColor, Source={x:Reference Root}}"
+                          HeightRequest="{Binding RectangleHeight, Source={x:Reference Root}}"
+                          WidthRequest="{Binding RectangleWidth, Source={x:Reference Root}}"
+                          RadiusX="16" RadiusY="16"
+                          StrokeThickness="0"
+                          HorizontalOptions="Center"
+                          VerticalOptions="Center"/>
+
+
+        <!-- Overlay content-->
+        <VerticalStackLayout 
+            Spacing="12"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            
+            <!-- 2a) White circle + Image -->
+            <Frame
+                BackgroundColor="White"
+                HasShadow="False"
+                CornerRadius="{Binding TopImageHeight, Source={x:Reference Root}}"
+                HeightRequest="{Binding TopImageHeight, Source={x:Reference Root}}"
+                WidthRequest="{Binding TopImageHeight, Source={x:Reference Root}}"
+                Padding="15"
+                HorizontalOptions="Center">
+                
+                <Image 
+                    Source="{Binding TopImageSource, Source={x:Reference Root}}"
+                    Aspect="AspectFit"/>
+            </Frame>
+
+            
+            <!-- 2b) Label under the image -->
+            <Label Text="{Binding TopLabelText, Source={x:Reference Root}}"
+                   TextColor="{Binding TopLabelTextColor, Source={x:Reference Root}}"
+                   FontSize="{Binding TopLabelFontSize, Source={x:Reference Root}}"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"/>
+
+            <!-- spacer -->
+            <BoxView 
+                HeightRequest="5" 
+                Color="#bee3cb" />
+
+            <!-- 2c) Bottom Section: Reuse Custom Button -->
+            <controls:CustomBorderButton 
+                ButtonText="{Binding BottomButtonText, Source={x:Reference Root}}"
+                RightImageSource="{Binding BottomRightImageSource, Source={x:Reference Root}}"
+                Command="{Binding BottomButtonCommand, Source={x:Reference Root}}"
+                BackgroundColor="{Binding BottomButtonBackgroundColor, Source={x:Reference Root}}"
+                TextColor="{Binding BottomButtonTextColor, Source={x:Reference Root}}"
+                FontSize="{Binding BottomButtonFontSize, Source={x:Reference Root}}"
+                HeightRequest="{Binding BottomButtonHeight, Source={x:Reference Root}}"
+                WidthRequest="{Binding BottomButtonWidth, Source={x:Reference Root}}"
+                />
+        </VerticalStackLayout>
+    </Grid>
+</ContentView>

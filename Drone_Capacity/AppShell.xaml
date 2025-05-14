@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Drone_Capacity.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Drone_Capacity"
+    xmlns:views="clr-namespace:Drone_Capacity.Views"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False">
+
+
+    <ShellContent
+        Title="Crobit"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage"
+        Shell.TabBarIsVisible="False"/>
+
+    <ShellContent
+        Title="Login"
+        ContentTemplate="{DataTemplate views:LoginPage}"
+        Route="LoginPage"
+        Shell.TabBarIsVisible="False"/>
+
+    <ShellContent
+        Title="Register"
+        ContentTemplate="{DataTemplate views:RegisterPage}"
+        Route="RegisterPage"
+        Shell.TabBarIsVisible="False"/>
+    
+    <!-- Bottom-tab menu -->
+    <TabBar>
+        <ShellContent
+        Title="Home"
+        Icon="home_first_option_bottom_selection.png"
+        ContentTemplate="{DataTemplate views:HomePage}"
+        Route="Home"/>
+
+        <!-- My Fields -->
+        <!--<ShellContent
+        Title="Fields"
+        Icon="home_option_bottom_selection_fields.png"
+        Route="Fields"
+        ContentTemplate="{DataTemplate views:MyFieldsPage}" />-->
+
+        <!--HelpDesk -->
+        <!-- <ShellContent
+        Title="Consultant"
+        Icon="home_option_bottom_selection_chat.png"
+        Route="Consultant"
+        ContentTemplate="{DataTemplate views:ConsultantPage}" /> -->
+
+        <!-- Notification -->
+        <!-- <ShellContent
+        Title="Notifications"
+        Icon="home_option_bottom_selection_notification.png"
+        Route="Notification"
+        ContentTemplate="{DataTemplate views:NotificationPage}" /> -->
+        
+    </TabBar>
+</Shell>
