@@ -68,8 +68,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Views\MyFields.xaml.cs">
-	    <DependentUpon>MyFields.xaml</DependentUpon>
+	  <Compile Update="Views\AddCropPage.xaml.cs">
+	    <DependentUpon>AddCropPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
@@ -80,13 +80,19 @@
 	  <MauiXaml Update="Controls\CustomCompositeControl.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Controls\MyFieldsSelectionBox.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\HomePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\MyFields.xaml">
+	  <MauiXaml Update="Views\AddCropPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\MyFieldsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\RegisterPage.xaml">

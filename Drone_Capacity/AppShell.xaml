@@ -27,6 +27,13 @@
         Route="RegisterPage"
         Shell.TabBarIsVisible="False"/>
     
+    <!-- Add Crop -->
+    <ShellContent
+        Title="AddCrop"
+        ContentTemplate="{DataTemplate views:AddCropPage}"
+        Route="AddCrop"
+        Shell.TabBarIsVisible="False"/>
+
     <!-- Bottom-tab menu -->
     <TabBar>
         <ShellContent
@@ -40,7 +47,7 @@
         Title="Fields"
         Icon="home_option_bottom_selection_fields.png"
         Route="MyFields"
-        ContentTemplate="{DataTemplate views:MyFields}" />
+        ContentTemplate="{DataTemplate views:MyFieldsPage}" />
 
         <!--HelpDesk -->
         <!-- <ShellContent

@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Drone_Capacity.Views.MyFields"
-             Title="My Fields">
+             x:Class="Drone_Capacity.Views.AddCropPage"
+             Title="Add Crop">
     <VerticalStackLayout Margin="20">
         <HorizontalStackLayout Spacing="75">
             <Image 
                 Source="back_button.png"
                 HeightRequest="20"
                 WidthRequest="20"
-                Aspect="AspectFit"/>
+                Aspect="AspectFit">
+                <Image.GestureRecognizers>
+                    <!-- Bind to the Command, not Tapped -->
+                    <TapGestureRecognizer Command="{Binding BackToHomepageCommand}" />
+                </Image.GestureRecognizers>
+            </Image>
+
             <Label 
                 Text="Select your crop"
                 VerticalOptions="Center" 
@@ -26,7 +32,7 @@
             ColumnDefinitions="*, *"
             RowSpacing="20"
             ColumnSpacing="20"
-            Margin="0,0,0,500">
+            Margin="0,0,0,350">
             <!-- When I create the database I have to pop the crops from the database -->
             <Frame
                 Grid.Row="0" 
@@ -65,19 +71,25 @@
             </Frame>
         </Grid>
 
-        <Frame
-            BackgroundColor="#4BA26A"
-            HasShadow="False"
-            CornerRadius="60"
-            HeightRequest="50"
-            WidthRequest="50"
-            Padding="15"
-            HorizontalOptions="Center">
+         <Image 
+             Source="add_button.png"
+             HeightRequest="60"
+             WidthRequest="60"
+             HorizontalOptions="End"
+             Margin="0,0,20,20"
+             />
 
-            <Image 
-                Source="tomato.png"
-                Aspect="AspectFit"/>
-        </Frame>
+        <Button 
+            Text="Save"
+            HeightRequest="40"
+            FontSize="18"
+            BackgroundColor="white"
+            TextColor="#4BA26A"
+            CornerRadius="8"
+            BorderColor="#4BA26A"
+            BorderWidth="1"
+            Margin="0,20,0,0"
+            />
 
     </VerticalStackLayout>
 </ContentPage>
