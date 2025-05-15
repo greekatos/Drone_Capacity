@@ -34,6 +34,14 @@
         Route="AddCrop"
         Shell.TabBarIsVisible="False"/>
 
+    <!-- Interactive Map: Used in MyFields -->
+    <ShellContent
+        Title="Interactive Map"
+        ContentTemplate="{DataTemplate views:InteractiveMapPage}"
+        Route="InteractiveMapPage"
+        Shell.TabBarIsVisible="False"/>
+
+
     <!-- Bottom-tab menu -->
     <TabBar>
         <ShellContent

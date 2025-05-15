@@ -4,6 +4,7 @@ using Microsoft.Maui.Hosting;
 using Microsoft.Maui.Handlers;
 #if ANDROID
 using Android.Content.Res; // Needed for ColorStateList
+using SkiaSharp.Views.Maui.Controls.Hosting; // Needed for the MAP
 using Android.Graphics;
 #endif
 
@@ -17,6 +18,7 @@ namespace Drone_Capacity
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseSkiaSharp(true)  // Available only in ANDROID!
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

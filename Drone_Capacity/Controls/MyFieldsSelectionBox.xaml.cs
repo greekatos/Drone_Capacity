@@ -56,5 +56,12 @@ namespace Drone_Capacity.Controls
             get => (string)GetValue(LocationProperty);
             set => SetValue(LocationProperty, value);
         }
+
+        // this get called when any instance is tapped
+        async void OnBoxTapped(object sender, EventArgs e)
+        {
+            // navigate to your interactive map
+            await Shell.Current.GoToAsync("//InteractiveMapPage");
+        }
     }
 }

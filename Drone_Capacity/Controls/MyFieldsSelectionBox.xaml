@@ -10,6 +10,12 @@
       HasShadow="True"
       BackgroundColor="White">
 
+        <!-- 1) Add this GestureRecognizers block -->
+        <Frame.GestureRecognizers>
+            <TapGestureRecognizer 
+          Tapped="OnBoxTapped" />
+        </Frame.GestureRecognizers>
+
         <VerticalStackLayout Spacing="12">
 
             <!-- 1) Title row -->
