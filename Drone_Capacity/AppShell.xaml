@@ -40,6 +40,13 @@
         ContentTemplate="{DataTemplate views:InteractiveMapPage}"
         Route="InteractiveMapPage"
         Shell.TabBarIsVisible="False"/>
+    
+    <!-- MyFields Details-->
+    <ShellContent
+        Title="MyFields Details"
+        ContentTemplate="{DataTemplate views:MyFieldsDetailsPage}"
+        Route="MyFieldsDetails"
+        Shell.TabBarIsVisible="False"/>
 
 
     <!-- Bottom-tab menu -->

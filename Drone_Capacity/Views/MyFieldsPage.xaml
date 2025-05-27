@@ -36,7 +36,10 @@
                 CropImageSource="wheat_plant.png"
                 CropName="Wheat"
                 GpsImageSource="gps_icon.png"
-                Location="Patras, Greece" />
+                Location="Patras, Greece" 
+                BackGroundColorCode="white"
+                TextColorone="Black"
+                TextColortwo="Gray"/>
 
             <!-- second card -->
             <controls:MyFieldsSelectionBox
@@ -44,7 +47,10 @@
                 CropImageSource="tomato.png"
                 CropName="Tomato"
                 GpsImageSource="gps_icon.png"
-                Location="Athens, Greece" />
+                Location="Athens, Greece"
+                BackGroundColorCode="white"
+                TextColorone="Black"
+                TextColortwo="Gray"/>
 
             <!-- third card -->
             <controls:MyFieldsSelectionBox
@@ -52,7 +58,10 @@
                 CropImageSource="tomato.png"
                 CropName="Tomato"
                 GpsImageSource="gps_icon.png"
-                Location="Thessaloniki, Greece" />
+                Location="Thessaloniki, Greece"
+                BackGroundColorCode="white"
+                TextColorone="Black"
+                TextColortwo="Gray"/>
         </VerticalStackLayout>
 
     </VerticalStackLayout>

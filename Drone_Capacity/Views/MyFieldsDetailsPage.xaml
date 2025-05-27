@@ -1,12 +1,91 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Drone_Capacity.Controls"
              x:Class="Drone_Capacity.Views.MyFieldsDetailsPage"
              Title="MyFieldsDetailsPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="30">
+
+            <!-- 1) Show your custom selection box at the top -->
+            <controls:MyFieldsSelectionBox
+                Title="Field1"
+                CropImageSource="wheat_plant.png"
+                CropName="Wheat"
+                GpsImageSource="gps_icon.png"
+                Location="Patras, Greece"
+                BackGroundColorCode="#4ba26a"
+                TextColorone="White"
+                TextColortwo="White"/>
+
+            <VerticalStackLayout
+                Spacing="10">
+                <!-- Label -->
+                <Label
+                Text="Field Name"
+                FontAttributes="Bold"/>
+
+                <!-- First Entry -->
+                <Border
+                Stroke="#4ba26a"
+                StrokeThickness="2">
+
+                <Entry
+                Placeholder="Field1"
+                />
+
+                </Border>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout
+                Spacing="10">
+                <!-- Scouting Date -->
+                <Label
+                Text="Scouting Date"
+                FontAttributes="Bold"/>
+
+                <!-- Second Entry -->
+                <Border
+                Stroke="#4ba26a"
+                StrokeThickness="2">
+
+                <Entry
+                Placeholder="Mar 20, 2025"
+                />
+
+                </Border>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout
+                Spacing="10">
+                <!-- Crop Name -->
+                <Label
+                Text="Crop Name"
+                FontAttributes="Bold"/>
+
+                <!-- Third Entry -->
+                <Border
+                Stroke="#4ba26a"
+                StrokeThickness="2">
+
+                <Entry
+                Placeholder="Wheat"
+                />
+
+                </Border>
+            </VerticalStackLayout>
+
+            <Label
+                Text="Basic Rates"
+                FontSize="22"
+                FontAttributes="Bold"/>
+
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
 </ContentPage>

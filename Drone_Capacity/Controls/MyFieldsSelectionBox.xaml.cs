@@ -39,6 +39,33 @@ namespace Drone_Capacity.Controls
             set => SetValue(CropNameProperty, value);
         }
 
+        // 4) Background Color
+        public static readonly BindableProperty BackGroundColorProperty =
+            BindableProperty.Create(nameof(BackGroundColorCode), typeof(string), typeof(MyFieldsSelectionBox), string.Empty);
+        public string BackGroundColorCode
+        {
+            get => (string)GetValue(BackGroundColorProperty);
+            set => SetValue(BackGroundColorProperty, value);
+        }
+
+        // 5) Text Color 1
+        public static readonly BindableProperty TextColoroneProperty =
+            BindableProperty.Create(nameof(TextColorone), typeof(string), typeof(MyFieldsSelectionBox), string.Empty);
+        public string TextColorone
+        {
+            get => (string)GetValue(TextColoroneProperty);
+            set => SetValue(TextColoroneProperty, value);
+        }
+
+        // 5) Text Color 2
+        public static readonly BindableProperty TextColortwoProperty =
+            BindableProperty.Create(nameof(TextColortwo), typeof(string), typeof(MyFieldsSelectionBox), string.Empty);
+        public string TextColortwo
+        {
+            get => (string)GetValue(TextColortwoProperty);
+            set => SetValue(TextColortwoProperty, value);
+        }
+
         // GPS icon
         public static readonly BindableProperty GpsImageSourceProperty =
             BindableProperty.Create(nameof(GpsImageSource), typeof(ImageSource), typeof(MyFieldsSelectionBox), default(ImageSource));
@@ -62,6 +89,34 @@ namespace Drone_Capacity.Controls
         {
             // navigate to your interactive map
             await Shell.Current.GoToAsync("//InteractiveMapPage");
+        }
+
+        // 4) Make a bindable ICommand that your page VM can set
+        public static readonly BindableProperty TappedCommandProperty =
+            BindableProperty.Create(
+                nameof(TappedCommand),
+                typeof(ICommand),
+                typeof(MyFieldsSelectionBox),
+                null);
+
+        public ICommand TappedCommand
+        {
+            get => (ICommand)GetValue(TappedCommandProperty);
+            set => SetValue(TappedCommandProperty, value);
+        }
+
+        // 5) A flag so you can turn taps on/off
+        public static readonly BindableProperty IsTappableProperty =
+            BindableProperty.Create(
+                nameof(IsTappable),
+                typeof(bool),
+                typeof(MyFieldsSelectionBox),
+                true);
+
+        public bool IsTappable
+        {
+            get => (bool)GetValue(IsTappableProperty);
+            set => SetValue(IsTappableProperty, value);
         }
     }
 }

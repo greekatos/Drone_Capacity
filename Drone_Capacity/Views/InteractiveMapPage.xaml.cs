@@ -4,11 +4,13 @@ using Microsoft.Maui.Controls;
 using Mapsui.Layers;
 using Mapsui.Styles;
 using Mapsui.UI.Maui;
+using Mapsui.UI;
 using static Mapsui.Tiling.OpenStreetMap;
 using Mapsui;
 using Mapsui.Projections;       // for SphericalMercator
 using Mapsui.Nts;
 using Mapsui.Nts.Extensions;
+
 using NetTopologySuite.Geometries;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,8 +21,7 @@ namespace Drone_Capacity.Views
     public partial class InteractiveMapPage : ContentPage
     {
         // Longitude, Latitude
-        const double HomeLon = 21.812561;
-        const double HomeLat = 38.279632;
+        const double HomeLon = 21.812561, HomeLat = 38.279632;
 
         // Field corner coordinates (replace with your actual corners)
         List<Coordinate> _coordinates= [
@@ -44,9 +45,6 @@ namespace Drone_Capacity.Views
                 ? new MPoint(x, y)
                 : new MPoint(0, 0);
 
-        // Bounds of the projected rectangle (for hit-testing)
-        double _fieldMinX, _fieldMaxX, _fieldMinY, _fieldMaxY;
-
         public InteractiveMapPage()
         {
             InitializeComponent();
@@ -56,7 +54,6 @@ namespace Drone_Capacity.Views
 
             // Show the Map
             ShowMap();
-
         }
 
         void ShowMap()
@@ -111,6 +108,7 @@ namespace Drone_Capacity.Views
                     AnimationDuration);
             };
         }
+
 
     }
 }

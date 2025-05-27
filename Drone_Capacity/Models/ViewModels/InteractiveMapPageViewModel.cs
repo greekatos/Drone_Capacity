@@ -13,11 +13,14 @@ namespace Drone_Capacity.Models.ViewModels
         public ICommand BackCommand { get; }
         // Return to the Home UI
         public ICommand CloseCommand { get; }
+        // Go to the MyFields details
+        public ICommand MyFieldsDetailsCommand { get; }
 
         public InteractiveMapPageViewModel()
         {
             BackCommand = new Command(async () => await NavigateToMyFields());
             CloseCommand = new Command(async () => await NavigateToHome());
+            MyFieldsDetailsCommand = new Command(async () => await NavigateToMyFieldsDetails());
         }
 
         // Navigate to My Fields UI
@@ -30,6 +33,12 @@ namespace Drone_Capacity.Models.ViewModels
         private async Task NavigateToHome()
         {
             await Shell.Current.GoToAsync("//Home");
+        }
+
+        // Navigate to the MyFields UI
+        private async Task NavigateToMyFieldsDetails()
+        {
+            await Shell.Current.GoToAsync("//MyFieldsDetails");
         }
     }
 }
