@@ -71,13 +71,18 @@
             </Frame>
         </Grid>
 
-         <Image 
+        <Image 
              Source="add_button.png"
              HeightRequest="60"
              WidthRequest="60"
              HorizontalOptions="End"
              Margin="0,0,20,20"
-             />
+             >
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="OnAddTapped"/>
+            </Image.GestureRecognizers>
+        </Image>
 
         <Button 
             Text="Save"
