@@ -5,10 +5,50 @@
              x:Class="Drone_Capacity.Views.MyFieldsDetailsPage"
              Title="MyFieldsDetailsPage">
     <ScrollView>
+
+
+        
         <VerticalStackLayout
             Padding="20"
-            Spacing="30">
+            Spacing="10">
 
+            <VerticalStackLayout
+            Spacing="10">
+
+                <HorizontalStackLayout Spacing="75">
+                    <Image 
+                        Source="back_button.png"
+                        HeightRequest="20"
+                        WidthRequest="20"
+                        Aspect="AspectFit">
+                        <Image.GestureRecognizers>
+                            <!-- Bind to the Command, not Tapped -->
+                            <TapGestureRecognizer Command="{Binding BackToHomepageCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <Label 
+                        Text="Overview"
+                        VerticalOptions="Center" 
+                        HorizontalOptions="Center"
+                        TextColor="Black"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        Margin="0,0,80,0"/>
+
+                    <Label 
+                        Text="Edit"
+                        VerticalOptions="Center" 
+                        HorizontalOptions="Center"
+                        TextColor="Black"
+                        FontSize="17"
+                        FontAttributes="Bold"
+                        Margin="0,10,0,0"/>
+                </HorizontalStackLayout>
+                <!--Separator-->
+                <BoxView HeightRequest="1" Color="Grey" Opacity="1"  Margin="0,10,0,40"/>
+
+            </VerticalStackLayout>
             <!-- 1) Show your custom selection box at the top -->
             <controls:MyFieldsSelectionBox
                 Title="Field1"
@@ -82,9 +122,58 @@
                 FontSize="22"
                 FontAttributes="Bold"/>
 
+            <ScrollView
+                Orientation="Horizontal" 
+                HorizontalScrollBarVisibility="Always"
+                VerticalScrollBarVisibility="Never"
+                Padding="0"
+                Margin="0,0,0,30">
+                
+                    <HorizontalStackLayout
+                    Spacing="10">
+                        <controls:FieldValues
+                        Title="Humidity"
+                        SeverityStatus="normal"
+                        PercentageStatus="30%"
+                        ArrowImageSource="myfieldsdetails_green_arrow_right.png"/>
 
+                        <controls:FieldValues
+                        Title="Salts"
+                        SeverityStatus="high"
+                        PercentageStatus="20%"
+                        ArrowImageSource="myfieldsdetails_green_arrow_right.png"/>
 
+                        <controls:FieldValues
+                            Title="Water"
+                            SeverityStatus="high"
+                            PercentageStatus="60%"
+                            ArrowImageSource="myfieldsdetails_green_arrow_right.png"/>
 
+                        <controls:FieldValues
+                            Title="Heat"
+                            SeverityStatus="normal"
+                            PercentageStatus="25 oC"
+                            ArrowImageSource="myfieldsdetails_green_arrow_right.png"/>
+
+                        <controls:FieldValues
+                            Title="PH"
+                            SeverityStatus="low"
+                            PercentageStatus="17%"
+                            ArrowImageSource="myfieldsdetails_green_arrow_right.png"/>
+                    </HorizontalStackLayout>
+                
+            </ScrollView>
+
+            <controls:CustomBorderButton 
+                ButtonText="Add Sensor"
+                RightImageSource="home_page_bottom_page_button.png"
+                Command="{Binding AddSensorCommand, Source={x:Reference Root}}"
+                BackgroundColor="#61ae7d"
+                TextColor="white"
+                FontSize="20"
+                HeightRequest="50"
+                WidthRequest="350"
+                />
         </VerticalStackLayout>
     </ScrollView>
 
