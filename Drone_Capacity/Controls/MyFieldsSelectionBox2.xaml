@@ -1,29 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentView x:Name="Root"
-             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Drone_Capacity.Controls.MyFieldsSelectionBox"
-             Title="MyFieldsSelectionBox">
+             x:Class="Drone_Capacity.Controls.MyFieldsSelectionBox2"
+             x:Name="Root"
+             Title="MyFieldsSelectionBox2">
     <Frame
-      Padding="16"
-      CornerRadius="12"
-      HasShadow="True"
-      BackgroundColor="{Binding BackGroundColorCode, Source={x:Reference Root}}">
+        Padding="16"
+        CornerRadius="12"
+        HasShadow="True"
+        BackgroundColor="{Binding BackGroundColorCode, Source={x:Reference Root}}">
 
-        <!-- 1) Add this GestureRecognizers block -->
-        <!-- wire the Tap to your bindable props -->
         <Frame.GestureRecognizers>
             <TapGestureRecognizer
-                Command="{Binding TappedCommand, Source={x:Reference Root}}"
-                NumberOfTapsRequired="2" />
-            <TapGestureRecognizer 
-                Tapped="OnBoxTapped" />
+                Tapped="OnBoxTapped2"/>
         </Frame.GestureRecognizers>
 
         <VerticalStackLayout Spacing="12">
 
-            <!-- 1) Title row -->
-            <Label 
+            <Label
                 Text="{Binding Title, Source={x:Reference Root}}"
                 FontSize="20"
                 FontAttributes="Bold"
@@ -57,6 +51,8 @@
                     TextColor="{Binding TextColortwo, Source={x:Reference Root}}"/>
             </HorizontalStackLayout>
 
+
         </VerticalStackLayout>
+        
     </Frame>
 </ContentView>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Drone_Capacity.Controls"
+             x:Class="Drone_Capacity.Views.MyFieldsPage2"
+             Title="MyFieldsPage2">
+    <VerticalStackLayout Margin="20">
+        <HorizontalStackLayout Spacing="75">
+            <Image 
+                Source="back_button.png"
+                HeightRequest="20"
+                WidthRequest="20"
+                Aspect="AspectFit">
+                <Image.GestureRecognizers>
+                    <!-- Bind to the Command, not Tapped -->
+                    <TapGestureRecognizer Command="{Binding BackToHomepageCommand}" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Label 
+                Text="My Fields2"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                TextColor="Black"
+                FontSize="20"
+                FontAttributes="Bold"/>
+        </HorizontalStackLayout>
+        <!--Separator-->
+        <BoxView HeightRequest="1" Color="Grey" Opacity="1"  Margin="0,10,0,40"/>
+
+        <!-- Here I add the Fields when db is created then take the name, crop, and location-->
+        <VerticalStackLayout Spacing="20">
+            <!-- first card -->
+            <controls:MyFieldsSelectionBox2
+                Title="Field A"
+                CropImageSource="wheat_plant.png"
+                CropName="Wheat"
+                GpsImageSource="gps_icon.png"
+                Location="Patras, Greece" 
+                BackGroundColorCode="white"
+                TextColorone="Black"
+                TextColortwo="Gray"/>
+
+            <!-- second card -->
+            <controls:MyFieldsSelectionBox2
+                Title="Field B"
+                CropImageSource="tomato.png"
+                CropName="Tomato"
+                GpsImageSource="gps_icon.png"
+                Location="Athens, Greece"
+                BackGroundColorCode="white"
+                TextColorone="Black"
+                TextColortwo="Gray"/>
+
+            <!-- third card -->
+            <controls:MyFieldsSelectionBox2
+                Title="Field C"
+                CropImageSource="tomato.png"
+                CropName="Tomato"
+                GpsImageSource="gps_icon.png"
+                Location="Thessaloniki, Greece"
+                BackGroundColorCode="white"
+                TextColorone="Black"
+                TextColortwo="Gray"/>
+        </VerticalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

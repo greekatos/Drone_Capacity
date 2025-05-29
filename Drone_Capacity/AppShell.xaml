@@ -47,7 +47,13 @@
         ContentTemplate="{DataTemplate views:MyFieldsDetailsPage}"
         Route="MyFieldsDetails"
         Shell.TabBarIsVisible="False"/>
-
+    
+    <!-- My Fields 2 -->
+    <ShellContent
+        Title="Fields"
+        ContentTemplate="{DataTemplate views:MyFieldsPage2}"
+        Route="MyFields2"
+        Shell.TabBarIsVisible="False"/>
 
     <!-- Bottom-tab menu -->
     <TabBar>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup  xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+                x:Class="Drone_Capacity.Views.AddCropPagePopup"
+                Size="300,350">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <!-- Wrap all inputs here -->
+        <VerticalStackLayout x:Name="InputContainer" Spacing="15">
+            <Label Text="Add a new crop" FontAttributes="Bold" FontSize="18"/>
+            <Label Text="Crop Name" FontSize="15"/>
+
+            <Border Stroke="#4BA26A" StrokeThickness="1" Padding="0">
+                <Entry
+                    Placeholder="Crop name"
+                    PlaceholderColor="#888888"
+                    BackgroundColor="Transparent"
+                    Margin="5,0"/>
+            </Border>
+
+            <Label Text="Crop Image" FontSize="15"/>
+            <HorizontalStackLayout Spacing="10">
+                <Entry
+                    Placeholder="No image selected"
+                    IsReadOnly="True"
+                    HorizontalOptions="FillAndExpand"/>
+                
+                <Button Text="Browse…" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <Button
+                x:Name="OkButton"
+                Text="OK"
+                HorizontalOptions="End"
+                Clicked="OnOkClicked"/>
+        </VerticalStackLayout>
+
+        <!-- Confirmation icon (hidden initially) -->
+        <Image
+            x:Name="ConfirmIcon"
+            Source="add_crop_confirm_image.png"
+            HeightRequest="150"
+            WidthRequest="150"
+            HorizontalOptions="Center"
+            IsVisible="False"
+            Margin="0,20,0,0"/>
+        
+    </VerticalStackLayout>
+    
+</toolkit:Popup>

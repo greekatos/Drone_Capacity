@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using CommunityToolkit.Maui.Views;
+using Drone_Capacity.Views;
 using Microsoft.Maui.Controls;
 
 namespace Drone_Capacity.Models.ViewModels
@@ -13,14 +15,15 @@ namespace Drone_Capacity.Models.ViewModels
         // Command for navigation of MyFields page to Home Button (the back button)
         public ICommand BackToHomepageCommand { get; }
 
-        public ICommand AddTappedCommand { get; }
-
-        // Tapping on any crop—name passed via CommandParameter
+        public ICommand ShowPopupAddCropCommand { get; }
         public ICommand CropTappedCommand { get; }
 
         public AddCropPageViewModel() {
             // Initialize the command to navigate to Home Page
             BackToHomepageCommand = new Command(async () => await NavigateBack());
+
+            ShowPopupAddCropCommand = new Command(async () => await OnShowPopup());
+            CropTappedCommand = new Command(async () => await MyFieldsPage2Command());
         }
 
         private async Task NavigateBack()
@@ -28,13 +31,14 @@ namespace Drone_Capacity.Models.ViewModels
             await Shell.Current.GoToAsync("//Home");
         }
 
-        private Task ShowCropForm(string cropName = null)
+        private async Task OnShowPopup()
         {
-            // Example: passing the cropName as a query parameter
-            if (!string.IsNullOrEmpty(cropName))
-                return Shell.Current.GoToAsync($"CropFormPage?crop={cropName}");
+            await Shell.Current.ShowPopupAsync(new Views.AddCropPagePopup());
+        }
 
-            return Shell.Current.GoToAsync("CropFormPage");
+        private async Task MyFieldsPage2Command()
+        {
+            await Shell.Current.GoToAsync("//MyFields2");
         }
     }
 }

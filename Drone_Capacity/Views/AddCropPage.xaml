@@ -49,7 +49,13 @@
 
                 <Image 
                     Source="wheat_plant.png"
-                    Aspect="AspectFit"/>
+                    Aspect="AspectFit">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                          Command="{Binding CropTappedCommand}"
+                          CommandParameter="wheat" />
+                    </Image.GestureRecognizers>
+                </Image>
             </Frame>
 
             <Frame
@@ -67,22 +73,25 @@
 
                 <Image 
                     Source="tomato.png"
-                    Aspect="AspectFit"/>
+                    Aspect="AspectFit">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                          Command="{Binding CropTappedCommand}"
+                          CommandParameter="tomato" />
+                    </Image.GestureRecognizers>
+                </Image>
             </Frame>
         </Grid>
 
-        <Image 
+        <ImageButton 
              Source="add_button.png"
              HeightRequest="60"
              WidthRequest="60"
              HorizontalOptions="End"
              Margin="0,0,20,20"
+             Command="{Binding ShowPopupAddCropCommand}"
              >
-            <Image.GestureRecognizers>
-                <TapGestureRecognizer
-                    Tapped="OnAddTapped"/>
-            </Image.GestureRecognizers>
-        </Image>
+        </ImageButton>
 
         <Button 
             Text="Save"
