@@ -83,6 +83,6 @@ public partial class MyFieldsSelectionBox2 : ContentView
     async void OnBoxTapped2(object sender, EventArgs e)
     {
         // navigate to the next page
-        await Shell.Current.GoToAsync("//Home");
+        await Shell.Current.GoToAsync("//AddCropFormPage");
     }
 }

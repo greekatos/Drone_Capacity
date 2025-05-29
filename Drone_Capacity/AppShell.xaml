@@ -55,6 +55,13 @@
         Route="MyFields2"
         Shell.TabBarIsVisible="False"/>
 
+    <!-- AddCropFormPage -->
+    <ShellContent
+        Title="AddCrop Form"
+        ContentTemplate="{DataTemplate views:AddCropFormPage}"
+        Route="AddCropFormPage"
+        Shell.TabBarIsVisible="False"/>
+
     <!-- Bottom-tab menu -->
     <TabBar>
         <ShellContent
