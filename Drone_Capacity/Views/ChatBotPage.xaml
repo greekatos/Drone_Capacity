@@ -32,35 +32,36 @@
 
         <!-- Chatbot logo / initial -->
         <Image
-        Source="chatbotpageinitiallogo.png"
-        Aspect="AspectFit"
-        HeightRequest="120"
-        WidthRequest="120"
-        HorizontalOptions="Center" />
+            Source="chatbotpageinitiallogo.png"
+            Aspect="AspectFit"
+            HeightRequest="120"
+            WidthRequest="120"
+            HorizontalOptions="Center" />
 
         <!-- Welcome text -->
         <Label
-        Text="Welcome, User"
-        FontSize="24"
-        FontAttributes="Bold"
-        HorizontalOptions="Center" />
+            Text="Welcome, User"
+            FontSize="24"
+            FontAttributes="Bold"
+            HorizontalOptions="Center" />
 
         <!-- Subtitle -->
         <Label
-        Text="Let's start a conversation with Lama"
-        FontSize="16"
-        HorizontalOptions="Center"
-        HorizontalTextAlignment="Center" />
+            Text="Let's start a conversation with Lama"
+            FontSize="16"
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center" />
 
         <!-- Start button -->
         <Button
-        Text="Start"
-        FontSize="18"
-        CornerRadius="8"
-        Padding="10,5"
-        WidthRequest="200"
-        BackgroundColor="#4BA26A"
-        TextColor="White"
-        HorizontalOptions="Center"/>
+            Text="Start"
+            FontSize="18"
+            CornerRadius="8"
+            Padding="10,5"
+            WidthRequest="200"
+            BackgroundColor="#4BA26A"
+            TextColor="White"
+            HorizontalOptions="Center"
+            Command="{Binding NavigateToChatBot}"/>
     </VerticalStackLayout>
 </ContentPage>

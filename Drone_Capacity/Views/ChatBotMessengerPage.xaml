@@ -3,10 +3,92 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Drone_Capacity.Views.ChatBotMessengerPage"
              Title="ChatBotMessengerPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <!-- Overall layout with three rows: Header, Messages, Input -->
+    <Grid RowDefinitions="Auto,*,Auto" Padding="0">
+
+        <!-- HEADER -->
+        <Grid Grid.Row="0" Padding="10" BackgroundColor="#4BA26A">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Back Button -->
+            <Image 
+                Source="back_button.png"
+                HeightRequest="20"
+                WidthRequest="20"
+                Aspect="AspectFit">
+                <Image.GestureRecognizers>
+                    <!-- Bind to the Command, not Tapped -->
+                    <TapGestureRecognizer Command="{Binding NavigateBackToMainChatBotPage}" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <!-- Title -->
+            <Label 
+              Grid.Column="1"
+              Text="Lama Chat"
+              TextColor="White"
+              FontSize="20"
+              FontAttributes="Bold"
+              VerticalOptions="Center"
+              HorizontalOptions="Center" />
+        </Grid>
+
+        <!-- MESSAGES LIST -->
+        <ScrollView Grid.Row="1" Padding="10" BackgroundColor="#EFEFEF">
+            <VerticalStackLayout Spacing="10">
+
+                <!-- Example incoming bubble -->
+                <Frame
+                    BackgroundColor="White"
+                    Padding="10"
+                    CornerRadius="12"
+                    HasShadow="False"
+                    HorizontalOptions="Start"
+                    MaximumWidthRequest="300">
+                    <Label 
+                      Text="Hello! How can I assist you today?"
+                      FontSize="14"
+                      TextColor="Black" />
+                </Frame>
+
+                <!-- Example outgoing bubble -->
+                <Frame
+                    BackgroundColor="#4BA26A"
+                    Padding="10"
+                    CornerRadius="12"
+                    HasShadow="False"
+                    HorizontalOptions="End"
+                    MaximumWidthRequest="300">
+                    <Label 
+                      Text="I have a problem"
+                      FontSize="14"
+                      TextColor="White" />
+                </Frame>
+
+                <!-- More bubbles will go here… -->
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- INPUT AREA -->
+        <Grid Grid.Row="2" Padding="10" ColumnDefinitions="*,Auto" BackgroundColor="White" ColumnSpacing="-300" >
+            <!-- Text entry -->
+            <Entry
+              x:Name="MessageEntry"
+              Placeholder="Type a message…"
+              VerticalOptions="Center"
+              Margin="0,0,10,0"/>
+
+            <!-- Send button -->
+            <ImageButton
+              Source="chatbotpagesendmessage.png"
+              HeightRequest="36"
+              WidthRequest="36"
+              BackgroundColor="Transparent" />
+        </Grid>
+
+    </Grid>
 </ContentPage>
