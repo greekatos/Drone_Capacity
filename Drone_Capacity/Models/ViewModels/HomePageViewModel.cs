@@ -16,12 +16,16 @@ namespace Drone_Capacity.Models.ViewModels
         // Command for navigation of Home page to MyFields UI
         public ICommand HomeToMyFieldsCommand { get; }
 
-        
+        // Command for navigation in the Consultant UI
+        public ICommand FeatureFifthCommand { get; }
+
+
         public HomePageViewModel()
         {
             // Initialize the command to navigate to MyFields
             AddCropCommand = new Command(async () => await NavigateToAddCrop());
             HomeToMyFieldsCommand = new Command(async () => await NavigateToMyFields());
+            FeatureFifthCommand = new Command(async () => await NavigateToConsultant());
         }
 
         // Navigate to Add Crop
@@ -34,6 +38,12 @@ namespace Drone_Capacity.Models.ViewModels
         private async Task NavigateToMyFields()
         {
             await Shell.Current.GoToAsync("//MyFields");
+        }
+
+        // Navigate to the Consultant UI
+        private async Task NavigateToConsultant()
+        {
+            await Shell.Current.GoToAsync("//Consultant");
         }
     }
 }

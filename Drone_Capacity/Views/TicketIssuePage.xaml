@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Drone_Capacity.Views.TicketIssuePage"
+             Title="TicketIssuePage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25">
+
+            <HorizontalStackLayout Spacing="75">
+                <Image 
+                Source="back_button.png"
+                HeightRequest="20"
+                WidthRequest="20"
+                Aspect="AspectFit">
+                    <Image.GestureRecognizers>
+                        <!-- Bind to the Command, not Tapped -->
+                        <TapGestureRecognizer Command="{Binding NavigateBackToConsultantPage}" />
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Label 
+                Text="Ticket Issue"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                TextColor="Black"
+                FontSize="20"
+                FontAttributes="Bold"/>
+            </HorizontalStackLayout>
+            <!--Separator-->
+            <BoxView HeightRequest="1" Color="Grey" Opacity="1"  Margin="0,10,0,40"/>
+            
+            <!-- Page Header -->
+            <Label 
+                Text="Submit a Support Ticket"
+                FontAttributes="Bold"
+                FontSize="24"
+                HorizontalOptions="Center" />
+
+            <!-- Subject -->
+            <Label Text="Subject" FontAttributes="Bold" />
+            <Entry 
+                x:Name="SubjectEntry"
+                Placeholder="Brief summary of your issue" />
+
+            <!-- Description -->
+            <Label Text="Description" FontAttributes="Bold" />
+            <Editor 
+                x:Name="DescriptionEditor"
+                HeightRequest="150"
+                Placeholder="Please describe the problem in detail" />
+
+            <!-- Attachment Picker -->
+            <Label Text="Attachments (optional)" FontAttributes="Bold" />
+            <HorizontalStackLayout Spacing="10">
+                <Entry
+                  x:Name="AttachmentEntry"
+                  Placeholder="No file selected"
+                  IsReadOnly="True" />
+                <Button
+                  x:Name="BrowseAttachmentButton"
+                  Text="Browse..."
+                  VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <!-- You can repeat the above block or use a CollectionView to show multiple attachments -->
+
+            <!-- Submit Button -->
+            <Button
+                x:Name="SubmitButton"
+                Text="Submit Ticket"
+                BackgroundColor="#4BA26A"
+                TextColor="White"
+                CornerRadius="8"
+                HeightRequest="45"
+                FontSize="16"
+                HorizontalOptions="Center"
+                Clicked="OnSubmitClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

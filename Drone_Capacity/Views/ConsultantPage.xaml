@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Drone_Capacity.Views.ConsultantPage"
+             Title="ConsultantPage">
+    <VerticalStackLayout 
+      Padding="0, 0, 0, 0"
+      Spacing="20"
+      VerticalOptions="Center"
+      HorizontalOptions="Center">
+
+        <HorizontalStackLayout Spacing="75">
+            <Image 
+                Source="back_button.png"
+                HeightRequest="20"
+                WidthRequest="20"
+                Aspect="AspectFit">
+                <Image.GestureRecognizers>
+                    <!-- Bind to the Command, not Tapped -->
+                    <TapGestureRecognizer Command="{Binding NavigateBackToHomePage}" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Label 
+                Text="Consultant"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                TextColor="Black"
+                FontSize="20"
+                FontAttributes="Bold"/>
+        </HorizontalStackLayout>
+        <!--Separator-->
+        <BoxView HeightRequest="1" Color="Grey" Opacity="1"  Margin="0,10,0,40"/>
+
+        <Label 
+        Text="How can we help you today?"
+        FontSize="24"
+        FontAttributes="Bold"
+        HorizontalOptions="Center" />
+
+        <Button 
+        Text="Technical Issue"
+        HeightRequest="50"
+        WidthRequest="200"
+        Command="{Binding NavigatetoTicketIssue}"/>
+
+        <Button 
+        Text="Financial"
+        HeightRequest="50"
+        WidthRequest="200"
+        Command="{Binding NavigatetoTicketIssue}"/>
+
+        <Button 
+        Text="General Information"
+        HeightRequest="50"
+        WidthRequest="200"
+        Command="{Binding NavigatetoTicketIssue}"/>
+
+        <Button 
+        Text="Chatbot"
+        HeightRequest="50"
+        WidthRequest="200"
+        Command="{Binding NavigatetoChatBot}"/>
+
+        <Button 
+        Text="Open a Ticket"
+        HeightRequest="50"
+        WidthRequest="200"
+        Command="{Binding NavigatetoTicketIssue}"/>
+
+    </VerticalStackLayout>
+</ContentPage>
