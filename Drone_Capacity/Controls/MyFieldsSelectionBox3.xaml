@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Drone_Capacity.Controls.MyFieldsSelectionBox3"
+             Title="MyFieldsSelectionBox3"
+             x:Name="Root">
+    <Frame
+        Padding="16"
+        CornerRadius="12"
+        HasShadow="True"
+        BackgroundColor="{Binding BackGroundColorCode, Source={x:Reference Root}}">
+
+        <Frame.GestureRecognizers>
+            <TapGestureRecognizer
+                Tapped="OnBoxTapped3"/>
+        </Frame.GestureRecognizers>
+
+        <VerticalStackLayout Spacing="12">
+
+            <Label
+                Text="{Binding Title, Source={x:Reference Root}}"
+                FontSize="20"
+                FontAttributes="Bold"
+                TextColor="{Binding TextColorone, Source={x:Reference Root}}"/>
+
+            <!-- 2) Crop row: image + label -->
+            <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                <Image
+                    Source="{Binding CropImageSource, Source={x:Reference Root}}"
+                    HeightRequest="40"
+                    WidthRequest="40"
+                    Aspect="AspectFit"/>
+                <Label
+                    Text="{Binding CropName, Source={x:Reference Root}}"
+                    VerticalOptions="Center"
+                    FontSize="16"
+                    TextColor="{Binding TextColorone, Source={x:Reference Root}}"/>
+            </HorizontalStackLayout>
+
+            <!-- 3) Location row: GPS icon + label -->
+            <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                <Image
+                    Source="{Binding GpsImageSource, Source={x:Reference Root}}"
+                    HeightRequest="20"
+                    WidthRequest="20"
+                    Aspect="AspectFit"/>
+                <Label
+                    Text="{Binding Location, Source={x:Reference Root}}"
+                    VerticalOptions="Center"
+                    FontSize="14"
+                    TextColor="{Binding TextColortwo, Source={x:Reference Root}}"/>
+            </HorizontalStackLayout>
+
+
+        </VerticalStackLayout>
+
+    </Frame>
+</ContentView>

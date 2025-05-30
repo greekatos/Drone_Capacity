@@ -83,7 +83,37 @@
         ContentTemplate="{DataTemplate views:ChatBotMessengerPage}"
         Route="ChatBotMessenger"
         Shell.TabBarIsVisible="False"/>
+    
 
+    <!-- Diagnose Disease Page -->
+    <ShellContent
+        Title="Diagnose Disease Page"
+        ContentTemplate="{DataTemplate views:DiagnoseDiseasePage}"
+        Route="DiagnoseDisease"
+        Shell.TabBarIsVisible="False"/>
+
+    <!-- My Fields 3 -->
+    <ShellContent
+        Title="Fields"
+        ContentTemplate="{DataTemplate views:MyFieldsPage3}"
+        Route="MyFields3"
+        Shell.TabBarIsVisible="False"/>
+    
+    <!-- Diagnose Disease Camera Live Feed-->
+    <ShellContent
+        Title="Camera Live Feed"
+        ContentTemplate="{DataTemplate views:LiveCameraFeedPage}"
+        Route="DiagnoseDiseaseLiveCameraFeed"
+        Shell.TabBarIsVisible="False"/>
+
+    <!-- DiagnoseDisease Report Page -->
+    <ShellContent
+        Title="Report Disease Page"
+        ContentTemplate="{DataTemplate views:ReportDiseaseGenerationPage}"
+        Route="ReportDiseaseGeneration"
+        Shell.TabBarIsVisible="False"/>
+
+    
     <!-- Bottom-tab menu -->
     <TabBar>
         <ShellContent

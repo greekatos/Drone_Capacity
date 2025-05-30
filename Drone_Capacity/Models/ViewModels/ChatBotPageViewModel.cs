@@ -8,7 +8,7 @@ using Microsoft.Maui.Controls;
 
 namespace Drone_Capacity.Models.ViewModels
 {
-    class ChatBotPageViewModel
+    public class ChatBotPageViewModel
     {
         // Command for navigation back to the consultant page
         public  ICommand NavigateBackToConsultantPage { get; }

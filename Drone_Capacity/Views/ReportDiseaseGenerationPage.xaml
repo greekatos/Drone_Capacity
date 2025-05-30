@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Drone_Capacity.Views.ReportDiseaseGenerationPage"
+             Title="ReportDiseaseGenerationPage">
+    <ScrollView>
+        <VerticalStackLayout 
+            Padding="20" 
+            Spacing="25">
+
+            <HorizontalStackLayout Spacing="10">
+                <Image 
+                Source="back_button.png"
+                HeightRequest="20"
+                WidthRequest="20"
+                Aspect="AspectFit">
+                    <Image.GestureRecognizers>
+                        <!-- Bind to the Command, not Tapped -->
+                        <TapGestureRecognizer Command="{Binding NavigateBackToLiveCameraFeedCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <!-- Report Header -->
+                <Label 
+                  Text="Crop Disease Detection Report"
+                  FontSize="24"
+                  FontAttributes="Bold"
+                  HorizontalOptions="Center" />
+            </HorizontalStackLayout>
+            <!--Separator-->
+            <BoxView HeightRequest="1" Color="Grey" Opacity="1"  Margin="0,0,0,0"/>
+
+
+
+            <!-- Affected Field Snapshot -->
+            <Frame CornerRadius="8" HasShadow="True" Padding="0">
+                <Image
+                    Source="diagnose_disease_zoomed_point.png"
+                    Aspect="AspectFill"
+                    HeightRequest="200" />
+            </Frame>
+
+            <!-- Disease Summary -->
+            <Label 
+              Text="Identified Disease: Septoria Leaf Blotch"
+              FontSize="18"
+              FontAttributes="Bold" />
+            <Label 
+              Text="Septoria leaf blotch is a fungal disease caused by Septoria tritici that typically manifests as small, brown lesions on leaves. If left untreated, it can lead to premature leaf drop and significant yield losses."
+              FontSize="14"
+              LineBreakMode="WordWrap" />
+
+            <!-- Severity & Confidence -->
+            <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
+                <Frame CornerRadius="8" Padding="10" BackgroundColor="#FFE5E5">
+                    <VerticalStackLayout>
+                        <Label Text="Severity" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        <Label Text="Moderate" HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame CornerRadius="8" Padding="10" BackgroundColor="#E5F0FF">
+                    <VerticalStackLayout>
+                        <Label Text="Confidence" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        <Label Text="92%" HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                </Frame>
+            </HorizontalStackLayout>
+
+            <!-- Recommended Actions -->
+            <Label 
+              Text="Recommended Treatment Plan"
+              FontSize="18"
+              FontAttributes="Bold" />
+
+            <VerticalStackLayout>
+                <Label 
+                  Text="1. Remove and destroy infected leaves immediately to limit spore dispersal."
+                  FontSize="14"
+                  LineBreakMode="WordWrap"/>
+                <Label 
+                  Text="2. Apply a registered fungicide containing chlorothalonil or azoxystrobin, following label rates."
+                  FontSize="14"
+                  LineBreakMode="WordWrap"/>
+                <Label
+                    Text="3. Rotate to a non‐host crop next season to reduce pathogen carry‐over."
+                    FontSize="14"
+                    LineBreakMode="WordWrap"/>
+                <Label
+                    Text="4. Monitor weather conditions and re‐apply treatment if prolonged wet periods occur."
+                    FontSize="14"
+                    LineBreakMode="WordWrap"/>
+            </VerticalStackLayout>
+
+
+            <!-- Cultural Practices -->
+            <Label 
+          Text="Cultural Management"
+          FontSize="18"
+          FontAttributes="Bold" />
+            <VerticalStackLayout>
+                <Label 
+                  Text="• Ensure adequate plant spacing for air circulation."
+                  FontSize="14"
+                  LineBreakMode="WordWrap" />
+                <Label 
+                  Text="• Avoid overhead irrigation during evening hours."
+                  FontSize="14"
+                  LineBreakMode="WordWrap" />
+                <Label 
+                  Text="• Implement proper crop rotation and residue management."
+                  FontSize="14"
+                  LineBreakMode="WordWrap" />
+            </VerticalStackLayout>
+
+
+            <!-- Contact Expert -->
+            <Button
+              Text="Contact an Expert"
+              BackgroundColor="#4BA26A"
+              TextColor="White"
+              FontAttributes="Bold"
+              CornerRadius="8"
+              HeightRequest="50"
+              Command="{Binding ContactExpertCommand}"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

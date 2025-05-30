@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Drone_Capacity.Views.DiagnoseDiseasePage"
+             xmlns:controls="clr-namespace:Drone_Capacity.Controls"
+             Title="DiagnoseDiseasePage">
+    
+    <VerticalStackLayout 
+        Padding="20"
+        Spacing="20">
+        <HorizontalStackLayout Spacing="75">
+            <Image 
+                Source="back_button.png"
+                HeightRequest="20"
+                WidthRequest="20"
+                Aspect="AspectFit">
+                <Image.GestureRecognizers>
+                    <!-- Bind to the Command, not Tapped -->
+                    <TapGestureRecognizer Command="{Binding NavigateToHomePageCommand}" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Label 
+                Text="Diagnose"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                TextColor="Black"
+                FontSize="20"
+                FontAttributes="Bold"/>
+        </HorizontalStackLayout>
+        <!--Separator-->
+        <BoxView HeightRequest="1" Color="Grey" Opacity="1"  Margin="0,10,0,20"/>
+        
+        <!-- Diagnose Disease Label -->
+        <Label
+            Text="Diseases in your crop:"
+            TextColor="Black"
+            FontSize="19"
+            FontAttributes="Bold"/>
+
+        <controls:DiagnoseDiseaseCustomControl
+            RectangleHeight="150"
+            RectangleWidth="340"
+            RectangleBorderColor="Green"
+            ImageSourceUrl="diagnose_disease_crop.jpg"
+            TitleText="White Spikes"
+            SubtitleText="Aug 20, 2025"
+            BottomButtonText="Diagnose"
+            BottomRightImageSource="home_page_bottom_page_button.png"
+            BottomButtonBackgroundColor="#4BA26A"
+            BottomButtonTextColor="White"
+            BottomButtonFontSize="14"
+            BottomButtonHeight="40"
+            BottomButtonWidth="120"
+            BottomButtonCommand="{Binding DiagnoseCommand}" />
+
+        <controls:DiagnoseDiseaseCustomControl
+            RectangleHeight="150"
+            RectangleWidth="340"
+            RectangleBorderColor="Green"
+            ImageSourceUrl="diagnose_disease_potato.jpg"
+            TitleText="Potato"
+            SubtitleText="Apr 20, 2025"
+            BottomButtonText="Diagnose"
+            BottomRightImageSource="home_page_bottom_page_button.png"
+            BottomButtonBackgroundColor="#4BA26A"
+            BottomButtonTextColor="White"
+            BottomButtonFontSize="14"
+            BottomButtonHeight="40"
+            BottomButtonWidth="120"
+            BottomButtonCommand="{Binding DiagnoseCommand}" />
+
+        <controls:DiagnoseDiseaseCustomControl
+            RectangleHeight="150"
+            RectangleWidth="340"
+            RectangleBorderColor="Green"
+            ImageSourceUrl="diagnose_disease_tomato.jpg"
+            TitleText="Tomato"
+            SubtitleText="Dec 20, 2025"
+            BottomButtonText="Diagnose"
+            BottomRightImageSource="home_page_bottom_page_button.png"
+            BottomButtonBackgroundColor="#4BA26A"
+            BottomButtonTextColor="White"
+            BottomButtonFontSize="14"
+            BottomButtonHeight="40"
+            BottomButtonWidth="120"
+            BottomButtonCommand="{Binding DiagnoseCommand}" />
+    </VerticalStackLayout>
+</ContentPage>

@@ -28,7 +28,7 @@ namespace Drone_Capacity.Models.ViewModels
 
         private async Task NavigateBackToHomePageMenu()
         {
-            await Shell.Current.GoToAsync("//HomePage");
+            await Shell.Current.GoToAsync("//Home");
         }
 
         private async Task NavigateToTicketIssuePage()
